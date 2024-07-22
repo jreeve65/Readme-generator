@@ -11,7 +11,7 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(projectName,fName,lName,description,usage,install,credits,licenses){
+function generateMarkdown(projectName,fName,lName,description,usage,install,credits,licenses,email,github){
  return `# ${projectName}
 
 ## Table of Contents
@@ -28,8 +28,7 @@ function generateMarkdown(projectName,fName,lName,description,usage,install,cred
 Hi my name is ${fName} ${lName} and I am a software developer this Readme was actually generated using the code I am providing in this repository the languages I am familiar with are:  
 JavaScript  
 Html  
-CSS  
-You can find me on: [gitHub] or discord[discordname]  
+CSS   
 (Feel free to go into index.js and edit the about me section in the writeToFile funcion to meet information specific to you).
 ## Description
 ${description}

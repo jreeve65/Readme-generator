@@ -46,6 +46,17 @@ inquirer
     name: 'licenses',
     message: 'What kind of license was used for this project?',
     choice: ['MIT','Apache License 2.0','GNU v3.0','BSD2','BSD3','Boost Software License 1.0','Creative Commons Zero v1.0','Eclipse Public License 2.0','GNU v3.0','GNU v2.1','Mozilla Public License 2.0','The Unlicense','None'],
+},
+{
+    type: 'input',
+    name: 'github',
+    message: 'What is your git hub username?',
+
+},
+{
+    type:'input',
+    name:'email',
+    message:'what is your email address?',
 }
 
 ])
@@ -56,7 +67,7 @@ inquirer
 
 // TODO: Create a function to write README file
 function writeToFile(fileName,data){
-    const content = 
+    const content = gm.generateMarkdown(data);
     fs.writeFile(`${fileName}`,content, err => {err? console.log(err):console.log('Success!')});
 }
 
