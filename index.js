@@ -45,7 +45,7 @@ inquirer
     type: 'list',
     name: 'licenses',
     message: 'What kind of license was used for this project?',
-    choice: ['MIT','Apache License 2.0','GNU v3.0','BSD2','BSD3','Boost Software License 1.0','Creative Commons Zero v1.0','Eclipse Public License 2.0','GNU v3.0','GNU v2.1','Mozilla Public License 2.0','The Unlicense','None'],
+    choices: ['MIT','Apache License 2.0','GNU v3.0','BSD2','BSD3','Boost Software License 1.0','Creative Commons Zero v1.0','Eclipse Public License 2.0','GNU v3.0','GNU v2.1','Mozilla Public License 2.0','The Unlicense','None'],
 },
 {
     type: 'input',
@@ -61,19 +61,19 @@ inquirer
 
 ])
 .then((answers)=>{
-    writeToFile('README.md',answers);
+    writeToFile('sample.md',answers);
 
 })
 
 // TODO: Create a function to write README file
 function writeToFile(fileName,data){
     const content = gm.generateMarkdown(data);
-    fs.writeFile(`${fileName}`,content, err => {err? console.log(err):console.log('Success!')});
+    fs.writeFile(fileName,content, err => {err? console.log(err):console.log('Success!')});
 }
 
 
 // TODO: Create a function to initialize app
-function init() {}
+//function init() {}
 
 // Function call to initialize app
-init();
+//init();

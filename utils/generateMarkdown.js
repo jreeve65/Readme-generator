@@ -1,53 +1,73 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if(license !== 'None'){
+    
+    return`https://img.shields.io/badge/${license.split(' ').join('_')}-blue`;
+  } else{
+    return "";
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if(license !=='None'){
+    return `[Licenses](#Licenses)`  
+
+  }
+  else{
+    return '';
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(projectName,license) {
+  if(license !=='None'){
+    return `## Licenses  
+${projectName} is licensed by ${license}  `;
+  } else{
+    return '';
+  }
+}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(projectName,fName,lName,description,usage,install,credits,licenses,email,github){
- return `# ${projectName}
+function generateMarkdown(data){
+ return `# ${data.projectName}  
+ 
+ ${renderLicenseBadge(data.licenses)}
+
 
 ## Table of Contents
-   [About me](#About me)  
+   
    [Description](#Description)  
    [Usage](#Description)  
    [Installation](#Installation)  
-   [Sample Screen shots](#Sample Screen shots)  
    [Credits](#Credits)  
-   [Licenses](#Licenses)  
+   ${renderLicenseLink(data.licenses)} 
+   [Questions](#Questions)  
 
 
-## About me
-Hi my name is ${fName} ${lName} and I am a software developer this Readme was actually generated using the code I am providing in this repository the languages I am familiar with are:  
-JavaScript  
-Html  
-CSS   
-(Feel free to go into index.js and edit the about me section in the writeToFile funcion to meet information specific to you).
+
 ## Description
-${description}
+${data.description}
 ## Usage
-${usage}  
+${data.usage}  
 ## Installation
-${install}
-## Screen Shots
+${data.install}
 
 ## Credits
-${credits}
-## Licenses
-License used ${licenses}`
+${data.credits}
+${renderLicenseSection(data.projectName,data.licenses)}
+## Questions  
+Hi my name is ${data.fName} ${data.lName} for questions regarding this project or my other work you can reach me via:  
+Github: ${data.github}  
+Email: ${data.email}  
+
+`
 ;
 }
 
-module.exports = {
-  generateMarkdown,
-  renderLicenseBadge,
-  renderLicenseLink,
-  renderLicenseSection,
-}
+module.exports = {generateMarkdown};
+ 
