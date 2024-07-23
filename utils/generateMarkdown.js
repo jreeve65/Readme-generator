@@ -15,13 +15,13 @@ function generateMarkdown(projectName,fName,lName,description,usage,install,cred
  return `# ${projectName}
 
 ## Table of Contents
-1. About me  
-2. Description  
-3. Usage  
-4. Installation  
-5. Sample Screen shots  
-6. Credits  
-7. Licenses  
+   [About me](#About me)  
+   [Description](#Description)  
+   [Usage](#Description)  
+   [Installation](#Installation)  
+   [Sample Screen shots](#Sample Screen shots)  
+   [Credits](#Credits)  
+   [Licenses](#Licenses)  
 
 
 ## About me
