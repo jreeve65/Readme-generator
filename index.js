@@ -61,7 +61,7 @@ inquirer
 
 ])
 .then((answers)=>{
-    writeToFile('sample2.md',answers);
+    writeToFile('example.md',answers);
 
 })
 
